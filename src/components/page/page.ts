@@ -2,7 +2,7 @@ import { BaseComponent, Component } from "../component.js";
 export interface Composable {
     addChild(child: Component): void;
 }
-class PageItemComponent extends BaseComponent<HTMLElement> implements Component {
+class PageItemComponent extends BaseComponent<HTMLElement> implements Composable {
     constructor(){
         super(`<li class="page-item">
                 <section class="page-item__body"></section>
@@ -16,7 +16,7 @@ class PageItemComponent extends BaseComponent<HTMLElement> implements Component 
         child.attachTo(container);
     };
 }
-export class PageComponent extends BaseComponent<HTMLUListElement> implements Component {
+export class PageComponent extends BaseComponent<HTMLUListElement> implements Composable {
     constructor() {
         super('<ul class="page"></ul>')
     }

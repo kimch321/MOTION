@@ -8,6 +8,7 @@ import { Composable, PageComponent } from "./components/page/page.js";
 class App{
     private readonly page: Component & Composable
     constructor(appRoot: HTMLElement) {
+        // 컴포넌트 안에 인스턴스를 만드는 것은 좋지 않다. 디펜던티 인젝션을 이용해 주입 받는 것이 좋다.
         this.page = new PageComponent();
         this.page.attachTo(appRoot);
 
